@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-16">
+      <title>Moon Investor!!!</title>
+      <style>
+         .rainbow-lr {
+                     background: linear-gradient(to right, crimson, chocolate , gold, darkgreen, midnightblue, blue, violet);
+                     color:transparent;
+                     background-clip: text;
+         }
+      </style>
+   </head>
+   <body>
+     {% block content %}
+        <h1>Enter Task</h1>
+        <form action="/" method = "POST">
+          <textarea id="jayTaskDesc" name="jayTaskDesc" rows="4" cols="50" placeholder="Enter Task"></textarea>
+          <p><input id ="jayTaskSubmit" type = "submit" value = "Jay Task" ></p>
+            <!-- <br>
+              Jay: <input type="checkbox" id="jayCheck">
+            </br> -->
+          <p></p>
+        </form>
+        <form action="/" method = "POST">
+          <textarea id="nidhiTaskDesc" name="nidhiTaskDesc" rows="4" cols="50" placeholder="Enter Task"></textarea>
+          <p><input id ="nidhiTaskSubmit" type = "submit" value = "Nidhi Task" ></p>
+          <!-- <br>
+            Nidhi: <input type="checkbox" id="nidhiCheck">
+          </br> -->
+          <p></p>
+        </form>
+        {% if data %}
+          <p></p>
+          <p></p>
+          <h2> {{ data }} </h2>
+          <p></p>
+          <p></p>
+        {% endif %}
+      {% endblock %}
+   </body>
+</html>
