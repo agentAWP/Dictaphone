@@ -12,13 +12,13 @@ def home():
         # for x in request.form:
         #     print (x + " : " + request.form[x])
 
-        if "jayTaskDesc" in request.form:
+        if "kingTaskDesc" in request.form:
             retries = 0
-            addTaskJay = request.form["jayTaskDesc"]
-            if addTaskJay == "":
+            addTaskKing = request.form["kingTaskDesc"]
+            if addTaskKing == "":
                 return render_template("tasksHome.html")
             values = {
-            "name": addTaskJay,
+            "name": addTaskKing,
             "assignees": [32644579],
             "status": "KING",
             "priority": 3
@@ -33,13 +33,13 @@ def home():
                     return render_template("tasksHome.html",data=submitSuccessful)
             submitSuccessful = "Task submitted successfully"
 
-        if "nidhiTaskDesc" in request.form:
+        if "princessTaskDesc" in request.form:
             retries = 0
-            addTaskNidhi = request.form["nidhiTaskDesc"]
-            if addTaskNidhi == "":
+            addTaskPrincess = request.form["princessTaskDesc"]
+            if addTaskPrincess == "":
                 return render_template("tasksHome.html")
             values = {
-                "name": addTaskNidhi,
+                "name": addTaskPrincess,
                 "assignees": [32644580],
                 "status": "PRINCESS",
                 "priority": 3
@@ -59,5 +59,4 @@ def home():
         return render_template("tasksHome.html")
 
 if __name__ == '__main__':
-    # main()
     app.run(debug=True, port=5000)
