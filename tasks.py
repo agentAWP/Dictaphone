@@ -1,11 +1,12 @@
 import requests
+import ClickUpVariables
 from flask import Flask, request, render_template, session, url_for,make_response
 
 app = Flask(__name__)
 @app.route('/',methods=["GET","POST"])
 def home():
-    headers = {"Authorization": "pk_32644579_2ALEIYMZ7OXSI4GT7QY1QWQ06NUZ37AI","Content-Type": "application/json"}
-    url = "https://api.clickup.com/api/v2/list/158588801/task"
+    headers = {"Authorization": ClickUpVariables.apikey,"Content-Type": "application/json"}
+    url = "https://api.clickup.com/api/v2/list/" + ClickUpVariables.listID + "/task"
 
     if request.method == "POST":
         # for x in request.form:
